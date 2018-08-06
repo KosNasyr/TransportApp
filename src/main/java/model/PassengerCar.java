@@ -1,5 +1,10 @@
 package model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="passenger_car")
 public class PassengerCar extends Vehicle {
     public PassengerCar(){
         super();

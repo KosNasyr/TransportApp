@@ -1,61 +1,45 @@
 package ejb;
 
-import model.AllHierarchy;
-import model.Management;
-import model.PassengerCar;
+import model.*;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 @Singleton
 @Startup
 public class ConsolePrinterBean {
-
-    @PersistenceContext(unitName = "TestPersistence")
-    EntityManager em;
+    @EJB
+    GetAllHierarchyBean getAll;
 
     @PostConstruct
-    public void init() {
-        try {
-            ArrayList<Management> managements = new ArrayList<>();
-            ArrayList<PassengerCar> cars = new ArrayList<>();
-            List logs = em.createStoredProcedureQuery("transport", "AllHierarchyMapping").getResultList();
-            Iterator iterator = logs.iterator();
-            System.out.println("========AllHierarchy=========");
-            while (iterator.hasNext()) {
-                AllHierarchy ah = (AllHierarchy) iterator.next();
-//                System.out.println(ah);
-                if (ah.getPathLabel().equals("bm")){
-                    managements.add( new Management(ah.getBmId(),
-                            ah.getBmManager(),
-                            ah.getBmAddress()));
-                }
-                else if (ah.getPathLabel().equals("pc")){
-                    cars.add(new PassengerCar(ah.getPcId(),
-                            ah.getPcTankAverage(),
-                            ah.getPcDriver(),
-                            ah.getPcRegistrationPlate()));
-                }
-            }
-            for (Management mn: managements) {
-                System.out.println(mn);
-            }
-            for( PassengerCar pc: cars){
-                System.out.println(pc);
+    public void consolePrint(){
+        ArrayList<Management> managements = new ArrayList<>();
+        ArrayList<PassengerCar> cars = new ArrayList<>();
+
+        Tree tree = getAll.getTree();
+        Node <AllHierarchy> root = tree.getRootElement();
+        System.out.println("---------------------ConsolePrintBean---------------------");
+        System.out.println(root.getChildren());
+
+        AllHierarchy mainManager = root.getData();
+        managements.add( new Management(mainManager.getBmId(),
+                mainManager.getBmManager(),
+                mainManager.getBmAddress()));
+        for (int i =0; i<root.getChildren().size(); i++){
+            AllHierarchy ah2=  root.getChildren().get(i).getData();
+            System.out.println("i  "+ i + " Data  "+ ah2);
+            if (ah2.getPathLabel().equals("bm")){
+                managements.add( new Management(ah2.getBmId(),
+                        ah2.getBmManager(),
+                        ah2.getBmAddress()));
             }
 
-
-        } catch (Exception e) {
-
-            e.printStackTrace();
         }
 
-
     }
+
+
 }

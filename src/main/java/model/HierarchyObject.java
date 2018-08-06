@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @MappedSuperclass
-public class HierarchyObject implements Serializable {
+public abstract class HierarchyObject implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

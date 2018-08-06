@@ -1,18 +1,26 @@
 package model;
 
-public class Vehicle extends HierarchyObject {
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class Vehicle extends HierarchyObject {
+
+    @Column(name = "tank_average")
     private double tankAverage;
-    private String registrationPlate;
+    @Column(name = "driver")
     private String driver;
+    @Column(name = "registration_plate")
+    private String registrationPlate;
 
     public Vehicle(){
     }
 
-    public Vehicle(int id,double tankAverage, String  registrationPlate,  String driver){
+    public Vehicle(int id,double tankAverage, String driver, String  registrationPlate){
         super(id);
         this.tankAverage= tankAverage;
-        this.registrationPlate = registrationPlate;
         this.driver = driver;
+        this.registrationPlate = registrationPlate;
     }
 
 
