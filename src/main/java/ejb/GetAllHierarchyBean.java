@@ -35,14 +35,40 @@ public class GetAllHierarchyBean {
                 if (ah3.getPathLabel().equals("bm") & ah3.getBmId() > 1){
                     root.addChild(new Node<>(ah3));
                 }
-                else if (ah3.getPathLabel().equals("pc") & ah3.getHierarchy().length() == 7){
-                    root.addChild(new Node<>(ah3));
+                else if (ah3.getHierarchy().length() ==7) {
+                    if (ah3.getPathLabel().equals("pc")) {
+                        root.addChild(new Node<>(ah3));
+                    }
+                    else if (ah3.getPathLabel().equals("bs")) {
+                        root.addChild(new Node<>(ah3));
+                    }
+                    else if (ah3.getPathLabel().equals("tr")) {
+                        root.addChild(new Node<>(ah3));
+                    }
                 }
-                else if (ah3.getPathLabel().equals("bs") & ah3.getHierarchy().length() == 7){
-                    root.addChild(new Node<>(ah3));
-                }
-                else if (ah3.getPathLabel().equals("tr") & ah3.getHierarchy().length() == 7){
-                    root.addChild(new Node<>(ah3));
+                else if (ah3.getHierarchy().length() > 7) {
+                    if (ah3.getHierarchy().substring(6, 7).equals("2")) {
+                        if (ah3.getPathLabel().equals("pc")) {
+                            root.getChildren().get(0).addChild(new Node<>(ah3));
+                        }
+                        else if (ah3.getPathLabel().equals("bs")) {
+                            root.getChildren().get(0).addChild(new Node<>(ah3));
+                        }
+                        else if (ah3.getPathLabel().equals("tr")) {
+                            root.getChildren().get(0).addChild(new Node<>(ah3));
+                        }
+                    }
+                    else if (ah3.getHierarchy().substring(6, 7).equals("3")) {
+                        if (ah3.getPathLabel().equals("pc")) {
+                            root.getChildren().get(1).addChild(new Node<>(ah3));
+                        }
+                        else if (ah3.getPathLabel().equals("bs")) {
+                            root.getChildren().get(1).addChild(new Node<>(ah3));
+                        }
+                        else if (ah3.getPathLabel().equals("tr")) {
+                            root.getChildren().get(1).addChild(new Node<>(ah3));
+                        }
+                    }
                 }
             }
 

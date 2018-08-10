@@ -44,11 +44,10 @@ public class Node<T> {
 
     public void insertChildAt(int index, Node<T> child) throws IndexOutOfBoundsException {
         if (index == getNumberOfChildren()) {
-            // this is really an append
             addChild(child);
             return;
         } else {
-            children.get(index); //just to throw the exception, and stop here
+            children.get(index);
             children.add(index, child);
         }
     }

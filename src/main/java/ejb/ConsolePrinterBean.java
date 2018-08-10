@@ -23,6 +23,8 @@ public class ConsolePrinterBean {
         Node <AllHierarchy> root = tree.getRootElement();
         System.out.println("---------------------ConsolePrintBean---------------------");
         System.out.println(root.getChildren());
+        System.out.println(root.getChildren().get(0).getChildren());
+        System.out.println(root.getChildren().get(1).getChildren());
 
         AllHierarchy mainManager = root.getData();
         managements.add( new Management(mainManager.getBmId(),
@@ -36,7 +38,9 @@ public class ConsolePrinterBean {
                         ah2.getBmManager(),
                         ah2.getBmAddress()));
             }
-
+        }
+        for (Management mn: managements){
+            System.out.println(mn);
         }
 
     }
