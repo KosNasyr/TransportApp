@@ -80,18 +80,5 @@ public class GetAllHierarchyBean {
         System.out.println("========AllHierarchyDone=========");
         return allHierarchyTree;
 
-//        try {
-//            List pcs = em.createQuery("FROM PassengerCar ").getResultList();
-//            Iterator iterator = pcs.iterator();
-//            System.out.println("========PCS=========");
-//            while (iterator.hasNext()) {
-//                PassengerCar pc = (PassengerCar) iterator.next();
-//                System.out.println(pc);
-//            }
-//
-//        } catch (Exception e) {
-//
-//            e.printStackTrace();
-//        }
     }
 }
