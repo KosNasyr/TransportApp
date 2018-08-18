@@ -1,14 +1,15 @@
-package model;
+package model.busines;
 
-public class Management extends HierarchyObject {
+
+public class Management extends HierarchyObjectNode {
     private String manager;
     private String address;
 
     public Management(){
     }
 
-    public Management(int id,String manager, String address){
-        super(id);
+    public Management(int id, HierarchyType type, String manager, String address){
+        super(id, type);
         this.manager = manager;
         this.address = address;
     }
@@ -31,6 +32,6 @@ public class Management extends HierarchyObject {
 
     @Override
     public String toString() {
-        return ""+getId() +"|"  +getManager() + "|" + getAddress() ;
+        return ""+getId() +"|" + getType() +"|" +getManager() + "|" + getAddress() ;
     }
 }

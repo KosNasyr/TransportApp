@@ -1,20 +1,15 @@
-package model;
+package model.busines;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="company_hierarcy")
-public class CompanyHierarchy extends HierarchyObject {
-    @Column(name ="path", columnDefinition="ltree")
+public class CompanyHierarchy extends HierarchyObjectNode {
+
     private String hierarchy;
 
     public CompanyHierarchy(){
     }
 
-    public  CompanyHierarchy(int id, String hierarchy){
-        super(id);
+    public CompanyHierarchy(int id, HierarchyType type, String hierarchy){
+        super(id, type);
         this.hierarchy = hierarchy;
     }
 

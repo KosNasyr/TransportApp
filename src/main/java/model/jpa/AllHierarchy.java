@@ -1,4 +1,4 @@
-package model;
+package model.jpa;
 
 
 import javax.persistence.*;
@@ -60,7 +60,7 @@ public class AllHierarchy implements Serializable {
 
     private int bsId;
     private double bsTankAverage;
-    private String bsCapacity;
+    private int bsCapacity;
     private String bsDriver;
     private String bsRegistrationPlate;
 
@@ -73,7 +73,7 @@ public class AllHierarchy implements Serializable {
 
     public AllHierarchy(String hierarchy, int bmId, String bmManager, String bmAddress,
                         int trId, double trTankAverage, String trCargo, String trDriver, String trRegistrationPlate,
-                        int bsId, double bsTankAverage, String bsCapacity, String bsDriver, String bsRegistrationPlate,
+                        int bsId, double bsTankAverage, int bsCapacity, String bsDriver, String bsRegistrationPlate,
                         int pcId, double pcTankAverage, String pcDriver, String pcRegistrationPlate, String pathLabel) {
         this.hierarchy = hierarchy;
         this.bmId = bmId;
@@ -192,11 +192,11 @@ public class AllHierarchy implements Serializable {
         this.bsTankAverage = bsTankAverage;
     }
 
-    public String getBsCapacity() {
+    public int getBsCapacity() {
         return bsCapacity;
     }
 
-    public void setBsCapacity(String bsCapacity) {
+    public void setBsCapacity(int bsCapacity) {
         this.bsCapacity = bsCapacity;
     }
 
@@ -263,4 +263,6 @@ public class AllHierarchy implements Serializable {
                 getBsId() +"|"+ getBsTankAverage() +"|"+ getBsCapacity() +"|"+ getBsDriver() +"|"+ getBsRegistrationPlate() +"|"+
                 getPcId() +"|"+ getPcTankAverage() +"|"+ getPcDriver() +"|"+ getPcRegistrationPlate() +"|"+ getPathLabel();
     }
+
+
 }

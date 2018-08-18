@@ -5,7 +5,6 @@
   <persistence-unit name="TestPersistence" transaction-type="JTA">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <jta-data-source>jdbc/TestDB</jta-data-source>
-    <class>model.PassengerCar</class>
     <properties>
   <property name="connection.url" value = "jdbc:postgresql://localhost:5432/postgres"/>
   <property name="hibernate.connection.driver_class"  value = "org.postgresql.Driver"/>

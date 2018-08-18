@@ -1,4 +1,4 @@
-package model;
+package model.busines;
 
 public class Truck extends Vehicle {
     private String cargo;
@@ -6,8 +6,8 @@ public class Truck extends Vehicle {
     public Truck(){
     }
 
-    public Truck(int id,double tankAverage, String cargo, String registrationPlate,  String driver){
-        super (id,tankAverage, registrationPlate, driver);
+    public Truck(int id, HierarchyType type, double tankAverage, String cargo, String registrationPlate, String driver){
+        super (id, type, tankAverage, registrationPlate, driver);
         this.cargo=cargo;
     }
 

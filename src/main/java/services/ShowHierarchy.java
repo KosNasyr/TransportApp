@@ -1,9 +1,8 @@
 package services;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import ejb.GetAllHierarchyBean;
-import model.Tree;
+import model.busines.Htree;
+
 
 import javax.ejb.EJB;
 import javax.ws.rs.GET;
@@ -17,18 +16,11 @@ public class ShowHierarchy {
     @EJB
     GetAllHierarchyBean allHierarchyBean;
 
-    @Path("get")
+    @Path("tree")
     @GET
-    @Produces(MediaType.TEXT_HTML)
-    public String getHierarchy() {
-        String treeToJson = "";
-        Tree tree = allHierarchyBean.getTree();
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            treeToJson = mapper.writeValueAsString(tree);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        return "<h3> Company Hierarchy : " + treeToJson + "</h3>";
+    @Produces(MediaType.APPLICATION_JSON)
+    public Htree getHierarchy() {
+        Htree tree = allHierarchyBean.getTree();
+        return tree;
     }
 }
