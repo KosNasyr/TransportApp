@@ -1,15 +1,21 @@
 package model.busines;
 
-public abstract class Vehicle extends HierarchyObjectNode {
+public abstract class VehicleNode extends HierarchyObjectNode {
 
     private double tankAverage;
     private String driver;
     private String registrationPlate;
 
-    public Vehicle(){
+    public VehicleNode(){
     }
 
-    public Vehicle(int id, HierarchyType type , double tankAverage, String driver, String  registrationPlate){
+    public VehicleNode(double tankAverage, String driver, String  registrationPlate){
+        this.tankAverage= tankAverage;
+        this.driver = driver;
+        this.registrationPlate = registrationPlate;
+    }
+
+    public VehicleNode(int id, HierarchyType type , double tankAverage, String driver, String  registrationPlate){
         super(id, type);
         this.tankAverage= tankAverage;
         this.driver = driver;

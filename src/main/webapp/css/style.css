@@ -1,0 +1,14 @@
+#out{
+    color: gray;
+    background-color:#ffffff;
+    width: 600px;
+    height: 700px;
+    overflow: scroll;
+}
+#out2{
+    color: gray;
+    background-color:#ffffff;
+    width: 500px;
+    height: 100px;
+    overflow: scroll;
+}

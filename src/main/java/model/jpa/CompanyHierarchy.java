@@ -1,15 +1,23 @@
-package model.busines;
+package model.jpa;
 
+import javax.persistence.*;
 
-public class CompanyHierarchy extends HierarchyObjectNode {
+@Entity
+@Table(name = "company_hierarcy")
+public class CompanyHierarchy extends HierarchyObject {
 
+    @Column(name = "path", columnDefinition = "ltree")
     private String hierarchy;
 
     public CompanyHierarchy(){
     }
 
-    public CompanyHierarchy(int id, HierarchyType type, String hierarchy){
-        super(id, type);
+    public CompanyHierarchy(String hierarchy){
+        this.hierarchy = hierarchy;
+    }
+
+    public CompanyHierarchy(int id, String hierarchy){
+        super(id);
         this.hierarchy = hierarchy;
     }
 

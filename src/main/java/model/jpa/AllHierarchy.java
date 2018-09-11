@@ -4,7 +4,6 @@ package model.jpa;
 import javax.persistence.*;
 import java.io.Serializable;
 
-
 @SqlResultSetMapping(
         name = "AllHierarchyMapping",
         entities = {

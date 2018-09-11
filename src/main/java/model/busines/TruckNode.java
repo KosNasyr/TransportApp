@@ -1,12 +1,18 @@
 package model.busines;
 
-public class Truck extends Vehicle {
+public class TruckNode extends VehicleNode {
+
     private String cargo;
 
-    public Truck(){
+    public TruckNode(){
     }
 
-    public Truck(int id, HierarchyType type, double tankAverage, String cargo, String registrationPlate, String driver){
+    public TruckNode(double tankAverage, String cargo, String registrationPlate, String driver){
+        super (tankAverage, registrationPlate, driver);
+        this.cargo=cargo;
+    }
+
+    public TruckNode(int id, HierarchyType type, double tankAverage, String cargo, String registrationPlate, String driver){
         super (id, type, tankAverage, registrationPlate, driver);
         this.cargo=cargo;
     }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bus Form</title>
+    <script type="text/javascript" src="webjars/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" src="js/scriptBus.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h2>Find Bus by ID</h2>
+<div>
+    <div id="out2"></div>
+    <input type="text" name="id" id="fid" />
+    <button id ="getbus"> Find</button>
+</div>
+<h2>Add new Bus</h2>
+<div>
+    <form id="addForm">
+        <table>
+            <tr>
+                <td>Enter manager's id :</td>
+                <td><input type="text" name="id" id="id" /></td>
+            </tr>
+            <tr>
+                <td>Tank Average :</td>
+                <td><input type="text" name="tankAverage" id="tankAverage" /></td>
+            </tr>
+            <tr>
+                <td>Capacity :</td>
+                <td><input type="text" name="capacity" id="capacity" /></td>
+            </tr>
+            <tr>
+                <td>Driver :</td>
+                <td><input type="text" name="driver" id="driver" /></td>
+            </tr>
+            <tr>
+                <td>Registration Plate :</td>
+                <td><input type="text" name="registrationPlate" id="registrationPlate" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Add new Bus" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<h2>Edit Bus</h2>
+<div>
+    <form id="editForm">
+        <table>
+            <tr>
+                <td>Enter bus's id :</td>
+                <td><input type="text" name="id" id="eid" /></td>
+            </tr>
+            <tr>
+                <td>Tank Average :</td>
+                <td><input type="text" name="tankAverage" id="etankAverage" /></td>
+            </tr>
+            <tr>
+                <td>Capacity :</td>
+                <td><input type="text" name="capacity" id="ecapacity" /></td>
+            </tr>
+            <tr>
+                <td>Driver :</td>
+                <td><input type="text" name="driver" id="edriver" /></td>
+            </tr>
+            <tr>
+                <td>Registration Plate :</td>
+                <td><input type="text" name="registrationPlate" id="eregistrationPlate" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Edit Bus" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<h2>Delete Bus</h2>
+<div>
+    <form id="deleteForm">
+        <table>
+            <tr>
+                <td>Enter bus's id :</td>
+                <td><input type="text" name="id" id="did" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Delete Bus" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<form>
+    <a href="/TransportApp-1.0/main.html">Main page</a>
+</form>
+</body>
+</html>

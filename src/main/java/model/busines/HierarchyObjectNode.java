@@ -1,7 +1,5 @@
 package model.busines;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +7,7 @@ import java.util.List;
 public abstract class HierarchyObjectNode implements Serializable {
 
     private int id;
+
     private HierarchyType type;
 
     public HierarchyObjectNode() {
@@ -48,7 +47,6 @@ public abstract class HierarchyObjectNode implements Serializable {
         this.children = children;
     }
 
-    @JsonIgnore
     public int getNumberOfChildren() {
         if (children == null) {
             return 0;

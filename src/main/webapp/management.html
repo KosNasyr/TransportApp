@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Management Form</title>
+    <script type="text/javascript" src="webjars/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" src="js/scriptManagement.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h2>Find Manager by ID</h2>
+<div>
+    <div id="out2"></div>
+    <input type="text" name="id" id="fid" />
+    <button id ="getman"> Find</button>
+</div>
+<h2>Add new Manager</h2>
+<div>
+    <form id="addForm">
+        <table>
+            <tr>
+                <td>Enter manager's id :</td>
+                <td><input type="text" name="id" id="id" /></td>
+            </tr>
+            <tr>
+                <td>Manager :</td>
+                <td><input type="text" name="manager" id="manager" /></td>
+            </tr>
+            <tr>
+                <td>Address :</td>
+                <td><input type="text" name="address" id="address" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Add Manager" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<h2>Edit Manager</h2>
+<div>
+    <form id="editForm">
+        <table>
+            <tr>
+                <td>Enter manager's id :</td>
+                <td><input type="text" name="id" id="eid" /></td>
+            </tr>
+            <tr>
+                <td>Manager :</td>
+                <td><input type="text" name="manager" id="emanager" /></td>
+            </tr>
+            <tr>
+                <td>Address :</td>
+                <td><input type="text" name="address" id="eaddress" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Edit manager" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<h2>Delete Manager</h2>
+<div>
+    <form id="deleteForm">
+        <table>
+            <tr>
+                <td>Enter manager's id :</td>
+                <td><input type="text" name="id" id="did" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Delete Manager" /></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<form>
+    <a href="/TransportApp-1.0/main.html">Main page</a>
+</form>
+</body>
+</html>
