@@ -1,4 +1,4 @@
-package model.busines;
+package model.business;
 
 public class PassengerCarNode extends VehicleNode {
     public PassengerCarNode(){

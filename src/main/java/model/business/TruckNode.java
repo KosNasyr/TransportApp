@@ -1,4 +1,4 @@
-package model.busines;
+package model.business;
 
 public class TruckNode extends VehicleNode {
 

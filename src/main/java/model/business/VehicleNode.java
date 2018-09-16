@@ -1,4 +1,4 @@
-package model.busines;
+package model.business;
 
 public abstract class VehicleNode extends HierarchyObjectNode {
 

@@ -1,4 +1,4 @@
-package model.busines;
+package model.business;
 
 public class BusNode extends VehicleNode {
     private int capacity;

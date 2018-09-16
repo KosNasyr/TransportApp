@@ -1,7 +1,7 @@
 package rest;
 
 import ejb.GetAllHierarchyBean;
-import model.busines.Htree;
+import model.business.Htree;
 
 import javax.ejb.EJB;
 import javax.ws.rs.GET;

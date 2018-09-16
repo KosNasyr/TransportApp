@@ -1,6 +1,6 @@
 package ejb;
 
-import model.busines.*;
+import model.business.*;
 import model.jpa.*;
 
 import javax.ejb.Stateless;
